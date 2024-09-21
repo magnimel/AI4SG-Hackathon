@@ -12,6 +12,11 @@
 - **Key Features**: Highlight the main features of the solution.
 - **Expected Impact**: Describe the anticipated outcomes and impacts of the solution.
 
+### 1.3 Technical Aspects
+- **Programming Languages**: List all programming languages used in the project, detailing their roles and why they were chosen (e.g., Python for data analysis, JavaScript for front-end development).
+- **Frameworks and Libraries**: Specify the frameworks and libraries employed (e.g., TensorFlow, React, Django).
+
+
 ## 2. Documentation of AI Tools Used
 
 ### 2.1 Overview of AI Tools
