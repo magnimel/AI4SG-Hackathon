@@ -38,8 +38,20 @@ transform = transforms.Compose([
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
 
+
 # Prompt for user input and split by whitespace
 image_inputs = input("Enter the image names (without extension, separated by spaces): ").split()
+
+image_path = './../assets/testingImage/bottleTest.jpg'
+image_p = './../assets/testingImage/metalTest.jpg'
+image_pp ='./../assets/testingImage/paperTest.jpg'
+image_ppp = './../assets/testingImage/cardboardTest.jpg'
+
+image = Image.open(image_path)
+image2 = Image.open(image_p)
+image3 = Image.open(image_pp)
+image4 = Image.open(image_ppp)
+
 
 for image_input in image_inputs:
     image_path = f'assets/testingImage/{image_input}.jpg'
