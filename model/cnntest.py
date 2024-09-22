@@ -35,12 +35,15 @@ transform =transforms.Compose([
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
 
+
+
 image_path = 'assets/testingImage/bottleTest.jpg'
 image_p = 'assets/testingImage/metalTest.jpg'
 image_pp ='assets/testingImage/paperTest.jpg'
 image_ppp = 'assets/testingImage/cardboardTest.jpg'
-image_pppp = 'assets/testingImage/bottleTest1.jpg'
+image_pppp = 'assets/testingImage/bottleTest4.jpg'
 image_ppppp = 'assets/testingImage/metalTest1.jpg'
+
 
 
 image = Image.open(image_path)

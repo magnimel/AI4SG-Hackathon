@@ -7,12 +7,13 @@ from torch.utils.data import DataLoader
 
 transform = transforms.Compose([
     transforms.Resize((32, 32)),
+    transforms.RandomRotation(10),
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
 
 #dataset = datasets.ImageFolder(root='C:\Users\Owner\Downloads\archive\Garbage classification\Garbage classification', transform=transform)
-dataset = datasets.ImageFolder(root=r'archive/Garbage classification/Garbage classification', transform=transform)
+dataset = datasets.ImageFolder(root=r'archive/Garbage classificationMerged/Garbage classification', transform=transform)
 
 #dataset = datasets.ImageFolder(C:r'\Users\Owner\Downloads')
 classes = ('cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash')
@@ -54,12 +55,8 @@ for epoch in range(num_epochs):
     total = 0
     for images, labels in dataLoader:
         optimizer.zero_grad()
-        
-        # Forward pass
         outputs = model(images)
         loss = criterion(outputs, labels)
-        
-        # Backward pass and optimization
         loss.backward()
         optimizer.step()
         
