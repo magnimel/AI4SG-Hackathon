@@ -12,11 +12,11 @@ transform = transforms.Compose([
 ])
 
 #dataset = datasets.ImageFolder(root='C:\Users\Owner\Downloads\archive\Garbage classification\Garbage classification', transform=transform)
-dataset = datasets.ImageFolder(root=r'C:\Users\Owner\Downloads\archive\Garbage classification\Garbage classification', transform=transform)
+dataset = datasets.ImageFolder(root=r'archive/Garbage classification/Garbage classification', transform=transform)
 
 #dataset = datasets.ImageFolder(C:r'\Users\Owner\Downloads')
 classes = ('cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash')
-dataLoader = DataLoader(dataset, batch_size=32, shuffle=True)
+dataLoader = DataLoader(dataset, batch_size=32, shuffle=True) 
 
 
 class GarbageClassifierCNN(nn.Module):
@@ -37,52 +37,44 @@ class GarbageClassifierCNN(nn.Module):
         x = F.relu(self.fc2(x))
         x = self.fc3(x)
         return x
-    # def __init__(self):
-    #     super(GarbageClassifierCNN, self).__init__()
-
-    #     self.linear1 = torch.nn.Linear(3072, 256)
-    #     self.activation = torch.nn.ReLU()
-    #     self.linear2 = torch.nn.Linear(256, 6)
-    #     self.softmax = torch.nn.Softmax(dim=1)
-
-    # def forward(self, x):
-    #     x = x.view(x.size(0), -1)
-    #     x = self.linear1(x)
-    #     x = self.activation(x)
-    #     x = self.linear2(x)
-    #     x = self.softmax(x)
-    #     return x
-
-
 
 model = GarbageClassifierCNN()
 #initialize loss function and optimizer:
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
-#training loop
-num_epochs =  15
+
+
+
+#training loop with accuracy calculation
+num_epochs = 25
 for epoch in range(num_epochs):
     running_loss = 0.0
+    correct = 0
+    total = 0
     for images, labels in dataLoader:
         optimizer.zero_grad()
-        outputs= model(images)
+        
+        # Forward pass
+        outputs = model(images)
         loss = criterion(outputs, labels)
+        
+        # Backward pass and optimization
         loss.backward()
         optimizer.step()
+        
         running_loss += loss.item()
+        
+        # Calculate accuracy
+        _, predicted = torch.max(outputs, 1)  # Get the index of the max log-probability
+        total += labels.size(0)  # Total number of labels
+        correct += (predicted == labels).sum().item()  # Correct predictions
+
+    epoch_loss = running_loss / len(dataLoader)
+    accuracy = 100 * correct / total  # Accuracy in percentage
     
-    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {running_loss/len(dataLoader):.4f}')
-
-#dummy_input = torch.randn(1, 3, 32, 32)
-
-#model.eval()
-#with torch.no_grad():
- #   output = model(dummy_input)
- #   print("Output shape: ", output.shape)
- #   print("Output: ", output)
+    print(f'Epoch [{epoch+1}/{num_epochs}], Loss: {epoch_loss:.4f}, Accuracy: {accuracy:.2f}%')
 
 
-#torch.argmax(output, dim=1)
 
 torch.save(model.state_dict(), 'garbage_classifier.pth')

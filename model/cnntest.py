@@ -22,21 +22,6 @@ class GarbageClassifierCNN(nn.Module):
         x = F.relu(self.fc2(x))
         x = self.fc3(x)
         return x
-    # def __init__(self):
-    #     super(GarbageClassifierCNN, self).__init__()
-
-    #     self.linear1 = torch.nn.Linear(3072, 256)
-    #     self.activation = torch.nn.ReLU()
-    #     self.linear2 = torch.nn.Linear(256, 6)
-    #     self.softmax = torch.nn.Softmax(dim=1)
-
-    # def forward(self, x):
-    #     x = x.view(x.size(0), -1)
-    #     x = self.linear1(x)
-    #     x = self.activation(x)
-    #     x = self.linear2(x)
-    #     x = self.softmax(x)
-    #     return x
 
 model = GarbageClassifierCNN()
 model.load_state_dict(torch.load('garbage_classifier.pth'))
@@ -50,22 +35,30 @@ transform =transforms.Compose([
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
 
-image_path = 'C:\\Users\\Owner\\Downloads\\bottleTest.jpg'
-image_p = 'C:\\Users\\Owner\\Downloads\\metalTest.jpg'
-image_pp ='C:\\Users\\Owner\\Downloads\\paperTest.jpg'
-image_ppp = 'C:\\Users\\Owner\\Downloads\\cardboardTest.jpg'
+image_path = 'assets/testingImage/bottleTest.jpg'
+image_p = 'assets/testingImage/metalTest.jpg'
+image_pp ='assets/testingImage/paperTest.jpg'
+image_ppp = 'assets/testingImage/cardboardTest.jpg'
+image_pppp = 'assets/testingImage/bottleTest1.jpg'
+image_ppppp = 'assets/testingImage/metalTest1.jpg'
+
 
 image = Image.open(image_path)
 image2 = Image.open(image_p)
 image3 = Image.open(image_pp)
 image4 = Image.open(image_ppp)
+image5 = Image.open(image_pppp)
+image6 = Image.open(image_ppppp)
 
 image = transform(image).unsqueeze(0)
 image2 = transform(image2).unsqueeze(0)
 image3 = transform(image3).unsqueeze(0)
 image4 = transform(image4).unsqueeze(0)
+image5 = transform(image5).unsqueeze(0)
+image6 =  transform(image6).unsqueeze(0)
 
-images = [image, image2, image3, image4]
+
+images = [image, image2, image3, image4, image5,image6]
 with torch.no_grad():
     for i in images:
         output = model(i)
