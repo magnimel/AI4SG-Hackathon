@@ -7,7 +7,7 @@ from torch.utils.data import DataLoader
 
 transform = transforms.Compose([
     transforms.Resize((32, 32)),
-    transforms.RandomRotation(10),
+    # transforms.RandomRotation(10),
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
@@ -48,7 +48,7 @@ optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 
 #training loop with accuracy calculation
-num_epochs = 25
+num_epochs = 20
 for epoch in range(num_epochs):
     running_loss = 0.0
     correct = 0
