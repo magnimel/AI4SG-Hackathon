@@ -50,10 +50,10 @@ transform =transforms.Compose([
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
 
-image_path = 'C:\\Users\\Owner\\Downloads\\bottleTest.jpg'
-image_p = 'C:\\Users\\Owner\\Downloads\\metalTest.jpg'
-image_pp ='C:\\Users\\Owner\\Downloads\\paperTest.jpg'
-image_ppp = 'C:\\Users\\Owner\\Downloads\\cardboardTest.jpg'
+image_path = './../assets/testingImage/bottleTest.jpg'
+image_p = './../assets/testingImage/metalTest.jpg'
+image_pp ='./../assets/testingImage/paperTest.jpg'
+image_ppp = './../assets/testingImage/cardboardTest.jpg'
 
 image = Image.open(image_path)
 image2 = Image.open(image_p)

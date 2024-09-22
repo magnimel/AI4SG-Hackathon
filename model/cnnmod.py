@@ -12,7 +12,7 @@ transform = transforms.Compose([
 ])
 
 #dataset = datasets.ImageFolder(root='C:\Users\Owner\Downloads\archive\Garbage classification\Garbage classification', transform=transform)
-dataset = datasets.ImageFolder(root=r'C:\Users\Owner\Downloads\archive\Garbage classification\Garbage classification', transform=transform)
+dataset = datasets.ImageFolder(root=r'./../archive/image-data', transform=transform)
 
 #dataset = datasets.ImageFolder(C:r'\Users\Owner\Downloads')
 classes = ('cardboard', 'glass', 'metal', 'paper', 'plastic', 'trash')
