@@ -30,7 +30,12 @@
 
 ### 2.3 Total use of AI Tools
 - **Participan 1-- %usage**: Detail the percentage of AI tool usage by the participant across different project phases, such as brainstorming, development, documentation, and testing. Specify which tools were used most frequently.
-- **Participan 2-- %usage**: Detail the percentage of AI tool usage by the participant across different project phases, such as brainstorming, development, documentation, and testing. Specify which tools were used most frequently.
+- **Participan 2-- Devin Huang
+-   %usage**: used around 80% AI generated contend
+    - **Optimization**: optimized the CNN model to perform with a better accuracy, also added a bunch of QOL changes to the code
+    - **LLM assistance**: learned a lot by using LLM to teach myself how to use pytorch, pyvision etc.
+
+
 - **Participan 3-- %usage**: Detail the percentage of AI tool usage by the participant across different project phases, such as brainstorming, development, documentation, and testing. Specify which tools were used most frequently.
 - **Participan 4-- Fahad Aljahlan
 - merged datasets to have the ai be trained by it, made an aws but my teammates made a better one so we went with theirs, fixed the merging but sadly lost this documentation so i am messaging my group to di this part again.
