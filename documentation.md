@@ -66,8 +66,8 @@
 #### Participant 3 -- name
 - **% Usage**:: Detail the percentage of AI tool usage by the participant across different project phases, such as brainstorming, development, documentation, and testing. Specify which tools were used most frequently.
 
-#### Participant 4 -- name
-- **% Usage**: Detail the percentage of AI tool usage by the participant across different project phases, such as brainstorming, development, documentation, and testing. Specify which tools were used most frequently.
+
+
 
 #### Participant 5 -- name
 - **% Usage**: Detail the percentage of AI tool usage by the participant across different project phases, such as brainstorming, development, documentation, and testing. Specify which tools were used most frequently.
