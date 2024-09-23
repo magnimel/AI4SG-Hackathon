@@ -70,7 +70,9 @@
 - **% Usage**:: Detail the percentage of AI tool usage by the participant across different project phases, such as brainstorming, development, documentation, and testing. Specify which tools were used most frequently.
 
 
-
+#### Participant 4 -- fahad aljahlan
+- **% Usage**:: used chatgpt to help reverte back to the correct version and merge it to the main, only lost the doc
+- merged the data sets to train the ai and test it, worked on aws but went with my teamates code because it was better
 
 #### Participant 5 -- name
 - **% Usage**: Detail the percentage of AI tool usage by the participant across different project phases, such as brainstorming, development, documentation, and testing. Specify which tools were used most frequently.
