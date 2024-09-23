@@ -66,8 +66,10 @@
   - **Debugging**: Fixed some bugs/ errors that we added to the code.
   - **80% LLM usage**: LLM was used a lot to help me understand different machine learning related concepts, additionally it was used for setting up AWS
 
-#### Participant 3 -- name
-- **% Usage**:: Detail the percentage of AI tool usage by the participant across different project phases, such as brainstorming, development, documentation, and testing. Specify which tools were used most frequently.
+#### Participant 3 -- Nikola Rowe
+- **% Usage**:
+  - **brainstorming**: Used ChatGPT to understand the voted idea and to research on each step
+  - **Development**: Used ChatGPT to understand the initial process of training and creating a CNN model, and used to debug and fix while working on model.
 
 
 #### Participant 4 -- fahad aljahlan
